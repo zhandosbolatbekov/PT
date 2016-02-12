@@ -1,0 +1,6 @@
+c:\users\zhandos\documents\visual studio 2012\Projects\week 1\Complex\Complex\bin\Debug\Complex.exe.config
+c:\users\zhandos\documents\visual studio 2012\Projects\week 1\Complex\Complex\bin\Debug\Complex.exe
+c:\users\zhandos\documents\visual studio 2012\Projects\week 1\Complex\Complex\bin\Debug\Complex.pdb
+c:\users\zhandos\documents\visual studio 2012\Projects\week 1\Complex\Complex\obj\Debug\Complex.csprojResolveAssemblyReference.cache
+c:\users\zhandos\documents\visual studio 2012\Projects\week 1\Complex\Complex\obj\Debug\Complex.exe
+c:\users\zhandos\documents\visual studio 2012\Projects\week 1\Complex\Complex\obj\Debug\Complex.pdb
