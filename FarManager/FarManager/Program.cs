@@ -79,12 +79,12 @@ namespace FarManager
 
                                 // Read the file and display it line by line.
                                 //StreamReader file = new StreamReader(@list[index].FullName);
-                                Console.WriteLine(list[index].FullName);
+                                
                                 /*string[] lines = System.IO.File.ReadAllLines(@list[index].FullName);
                                 foreach (string s in lines)
                                     Console.WriteLine("\t" + s);
-                            
-                                fileOpened = true;*/
+                                */
+                                fileOpened = true;
                             }
                             break;
                         }
