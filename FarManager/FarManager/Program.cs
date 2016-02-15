@@ -9,32 +9,41 @@ namespace FarManager
 {
     class Program
     {
+        static int index = 0;
+        static bool fileOpened = false;
+        static List<FileSystemInfo> list = new List<FileSystemInfo>();
+
+        static void show()
+        {
+            Console.Clear();
+            for (int i = 0; i < list.Count; ++i)
+            {
+                if (i == index)
+                    Console.BackgroundColor = ConsoleColor.DarkCyan;
+                if (list[i].GetType() == typeof(FileInfo))
+                    Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(list[i].Name);
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+        }
+
         static void Main(string[] args)
         {
-            string path = Console.ReadLine();
-            DirectoryInfo dir = new DirectoryInfo(path);
-            List<FileSystemInfo> list = new List<FileSystemInfo>();
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            //string path = Console.ReadLine();
+            string path = "c:/";
+            DirectoryInfo dir = new DirectoryInfo(@path);
+            
             list.AddRange(dir.GetDirectories());
             list.AddRange(dir.GetFiles());
 
-            int index = 0;
-
             Stack<DirectoryInfo> stack = new Stack<DirectoryInfo>();
             stack.Push(dir);
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
+
             while (true)
             {
-                Console.Clear();
-                for (int i = 0; i < list.Count; ++i)
-                {
-                    if (i == index)
-                        Console.BackgroundColor = ConsoleColor.DarkCyan;
-                    if (list[i].GetType() == typeof(FileInfo))
-                        Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(list[i].Name);
-                    Console.BackgroundColor = ConsoleColor.DarkBlue;
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
+                show();
                 ConsoleKeyInfo button = Console.ReadKey();
                 switch (button.Key)
                 {
@@ -51,35 +60,35 @@ namespace FarManager
                             index = 0;
                         break;
                     case ConsoleKey.Enter:
-                        if (list[index].GetType() == typeof(DirectoryInfo))
-                        {
-                            dir = new DirectoryInfo(list[index].FullName);
-                            stack.Push(dir);
-                            index = 0;
-                            list.Clear();
-                            list.AddRange(dir.GetDirectories());
-                            list.AddRange(dir.GetFiles());
-                        }
+                        if (list.Count == 0)
+                            break;
                         else
                         {
-                            Console.Clear();
-                            int counter = 0;
-                            string line;
-
-                            // Read the file and display it line by line.
-                            StreamReader file = new StreamReader(list[index].FullName);
-                            while ((line = file.ReadLine()) != null)
+                            if (list[index].GetType() == typeof(DirectoryInfo))
                             {
-                                System.Console.WriteLine(line);
-                                counter++;
+                                dir = new DirectoryInfo(list[index].FullName);
+                                stack.Push(dir);
+                                index = 0;
+                                list.Clear();
+                                list.AddRange(dir.GetDirectories());
+                                list.AddRange(dir.GetFiles());
                             }
+                            else
+                            {
+                                Console.Clear();
 
-                            file.Close();
-                            System.Console.WriteLine("There were {0} lines.", counter);
-                            // Suspend the screen.
-                            System.Console.ReadLine();
+                                // Read the file and display it line by line.
+                                //StreamReader file = new StreamReader(@list[index].FullName);
+                                Console.WriteLine(list[index].FullName);
+                                /*string[] lines = System.IO.File.ReadAllLines(@list[index].FullName);
+                                foreach (string s in lines)
+                                    Console.WriteLine("\t" + s);
+                            
+                                fileOpened = true;*/
+                            }
+                            break;
                         }
-                        break;
+                        
                     case ConsoleKey.Backspace:
                         if (stack.Count > 1)
                         {
@@ -92,12 +101,21 @@ namespace FarManager
                         }
                         break;
                     case ConsoleKey.Escape:
-                        Console.Clear();
-                        Console.WriteLine("Good bye!");
-                        Console.ReadKey();
-                        return;
+                        if (fileOpened == true)
+                        {
+                            show();
+                            fileOpened = false;
+                            break;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Good bye!");
+                            Console.ReadKey();
+                            return;
+                        }
+                        
                 }
-                Console.Clear();
             }
         }
     }
