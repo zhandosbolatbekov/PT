@@ -1,0 +1,6 @@
+c:\users\zhandos\documents\visual studio 2012\Projects\week 1\FarManager\FarManager\bin\Debug\FarManager.exe.config
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\week 1\FarManager\FarManager\bin\Debug\FarManager.exe
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\week 1\FarManager\FarManager\bin\Debug\FarManager.pdb
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\week 1\FarManager\FarManager\obj\Debug\FarManager.csprojResolveAssemblyReference.cache
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\week 1\FarManager\FarManager\obj\Debug\FarManager.exe
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\week 1\FarManager\FarManager\obj\Debug\FarManager.pdb

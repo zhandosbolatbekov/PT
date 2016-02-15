@@ -11,7 +11,8 @@ namespace Example3
     {
         static void Main(string[] args)
         {
-            DirectoryInfo d = new DirectoryInfo(@"c:\testfolder");
+            string startPath = @"c:\testfolder";
+            DirectoryInfo d = new DirectoryInfo(startPath);
             int cnt = dfs(d);
             Console.WriteLine(cnt);
             Console.ReadKey();
