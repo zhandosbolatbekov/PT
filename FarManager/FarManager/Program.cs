@@ -20,8 +20,10 @@ namespace FarManager
             {
                 if (i == index)
                     Console.BackgroundColor = ConsoleColor.DarkCyan;
+                
                 if (list[i].GetType() == typeof(FileInfo))
                     Console.ForegroundColor = ConsoleColor.Green;
+                
                 Console.WriteLine(list[i].Name);
                 Console.BackgroundColor = ConsoleColor.DarkBlue;
                 Console.ForegroundColor = ConsoleColor.White;
@@ -30,7 +32,6 @@ namespace FarManager
 
         static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
             //string path = Console.ReadLine();
             string path = "c:/";
             DirectoryInfo dir = new DirectoryInfo(@path);
@@ -43,6 +44,7 @@ namespace FarManager
 
             while (true)
             {
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
                 show();
                 ConsoleKeyInfo button = Console.ReadKey();
                 switch (button.Key)
@@ -84,11 +86,13 @@ namespace FarManager
                                 foreach (string s in lines)
                                     Console.WriteLine("\t" + s);
                                 */
+                                System.Diagnostics.Process.Start(@list[index].FullName);
                                 fileOpened = true;
                             }
                             break;
                         }
-                        
+                    case ConsoleKey.F4:
+                        break;
                     case ConsoleKey.Backspace:
                         if (stack.Count > 1)
                         {
