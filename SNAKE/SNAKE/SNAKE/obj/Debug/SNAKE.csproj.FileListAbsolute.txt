@@ -1,0 +1,6 @@
+c:\users\zhandos\documents\visual studio 2012\Projects\SNAKE\SNAKE\SNAKE\bin\Debug\SNAKE.exe.config
+c:\users\zhandos\documents\visual studio 2012\Projects\SNAKE\SNAKE\SNAKE\obj\Debug\SNAKE.csprojResolveAssemblyReference.cache
+c:\users\zhandos\documents\visual studio 2012\Projects\SNAKE\SNAKE\SNAKE\bin\Debug\SNAKE.exe
+c:\users\zhandos\documents\visual studio 2012\Projects\SNAKE\SNAKE\SNAKE\bin\Debug\SNAKE.pdb
+c:\users\zhandos\documents\visual studio 2012\Projects\SNAKE\SNAKE\SNAKE\obj\Debug\SNAKE.exe
+c:\users\zhandos\documents\visual studio 2012\Projects\SNAKE\SNAKE\SNAKE\obj\Debug\SNAKE.pdb
