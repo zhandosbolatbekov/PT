@@ -1,0 +1,9 @@
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\bin\Debug\MiniCalculator.exe.config
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\bin\Debug\MiniCalculator.exe
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\bin\Debug\MiniCalculator.pdb
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\obj\Debug\MiniCalculator.csprojResolveAssemblyReference.cache
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\obj\Debug\MiniCalculator.Properties.Resources.resources
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\obj\Debug\MiniCalculator.csproj.GenerateResource.Cache
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\obj\Debug\MiniCalculator.exe
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\obj\Debug\MiniCalculator.pdb
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\obj\Debug\MiniCalculator.MiniCalc.resources
