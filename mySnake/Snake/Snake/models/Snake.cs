@@ -14,6 +14,18 @@ namespace SnakeGame.models
             sign = 'O';
             color = ConsoleColor.Green;
         }
+        public override void Draw()
+        {
+            for (int i = 0; i < body.Count; i++)
+            {
+                if (i == 0)
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                else
+                    Console.ForegroundColor = color;
+                Console.SetCursorPosition(body[i].x, body[i].y);
+                Console.Write(sign);
+            }
+        }
         public void move(int dx, int dy)
         {
             Point tail = new Point(body[body.Count - 1].x, body[body.Count - 1].y);
@@ -30,6 +42,7 @@ namespace SnakeGame.models
 
             if (body[0].x == Game.food.body[0].x && body[0].y == Game.food.body[0].y)
             {
+                Game.PTS += 1;
                 body.Add(tail);
                 Game.food.setNewPos();
             }

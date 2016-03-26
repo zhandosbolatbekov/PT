@@ -16,10 +16,9 @@ namespace SnakeGame.models
         public char sign;
         public ConsoleColor color;
         public Drawer() { }
-        public void Draw()
+        public virtual void Draw()
         {
             Console.ForegroundColor = color;
-
             foreach (Point p in body)
             {
                 Console.SetCursorPosition(p.x, p.y);

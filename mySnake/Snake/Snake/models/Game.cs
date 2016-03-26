@@ -12,18 +12,22 @@ namespace SnakeGame
         public static Snake snake = new Snake();
         public static Food food = new Food();
         public static Wall wall = new Wall();
-        public static bool GameOver;
+        public static int level = 1;
+        public static int PTS = 0;
+        public static bool GameOver = false;
 
         public static void Init()
         {
             Console.SetWindowSize(80, 25);
-            GameOver = false;
+            Console.CursorVisible = false;
 
+            Game.wall.setLevel(level);
+
+            Game.snake.body.Clear();
             Game.snake.body.Add(new Point(10, 10));
             Game.snake.body.Add(new Point(9, 10));
             Game.snake.body.Add(new Point(8, 10));
-
-            Game.wall.setLevel(1);
+            
 
             Game.food.setNewPos();
         }

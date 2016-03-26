@@ -10,14 +10,15 @@ namespace SnakeGame
     class Program
     {
         public enum Direction { right, down, left, up };
-        public static Direction dir;
+        public static Direction dir, prevDir;
+        public static int period = 150;
 
         static void Main(string[] args)
         {
             Game.Init();
 
-            Thread T = new Thread(Move);
-            T.Start();
+            Timer T = new Timer(Move);
+            T.Change(0, period);
             
             while (!Game.GameOver)
             {
@@ -40,20 +41,29 @@ namespace SnakeGame
                         Game.GameOver = true;
                         break;
                     case ConsoleKey.F1:
+                        prevDir = dir;
                         Game.Save();
                         break;
                     case ConsoleKey.F2:
+                        dir = prevDir;
                         Game.Resume();
                         break;
                 }
             }
             End();
-            Console.ReadKey();
         }
         public static void Move(object state)
         {
-            while (!Game.GameOver)
+            
+            if(!Game.GameOver)
             {
+                if (Game.PTS > 0 && Game.PTS % 4 == 0)
+                {
+                    period -= 25;
+                    Game.level += 1;
+                    Game.Init();
+                    dir = Direction.right;
+                }    
                 switch (dir)
                 {
                     case Direction.up:
@@ -69,15 +79,21 @@ namespace SnakeGame
                         Game.snake.move(-1, 0);
                         break;
                 }
+                
                 Game.snake.Draw();
-                Thread.Sleep(100);
+                
             }
-            End();
+            else End();
         }
         public static void End()
         {
             Console.Clear();
-            Console.SetCursorPosition(20, 10);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.SetCursorPosition(25, 8);
+            Console.WriteLine("You won {0} levels", Game.level - 1);
+            Console.SetCursorPosition(25, 9);
+            Console.WriteLine("You have {0} points", Game.PTS);
+            Console.SetCursorPosition(25, 10);
             Console.ForegroundColor = ConsoleColor.Red; 
             Console.WriteLine("Game Over!");
         }
