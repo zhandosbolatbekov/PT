@@ -12,7 +12,17 @@ namespace MiniCalculator
         public double B;
         public double res;
         public string operation;
-        public void GetRes()
+        public double memval;
+        public bool eqClicked = false;
+        public void init()
+        {
+            A = 0;
+            B = 0;
+            res = 0;
+            operation = "";
+            eqClicked = false;
+        }
+        public void Calculate()
         {
             if (operation == "+")
                 res = A + B;
@@ -20,7 +30,6 @@ namespace MiniCalculator
                 res = A - B;
             if (operation == "*")
                 res = A * B;
-
             if (operation == "/")
             {
                 try
@@ -33,6 +42,10 @@ namespace MiniCalculator
                     Console.ReadKey();
                 }
             }
+            if (operation == "%")
+                res = A / 100.0 * B;
+            if (operation == "^") 
+                res = Math.Pow(A, B);
         }
     }
 }

@@ -1,0 +1,3 @@
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\bin\Debug\MiniCalculator.exe.config
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\obj\Debug\MiniCalculator.exe
+C:\Users\Zhandos\Documents\Visual Studio 2012\Projects\MiniCalculator\MiniCalculator\obj\Debug\MiniCalculator.pdb
